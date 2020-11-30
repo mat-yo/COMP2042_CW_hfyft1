@@ -12,12 +12,10 @@ import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 
 public class tutorialControl {
 	@FXML
 	private Pane tutpage;
-	//private Stage lol;
 	
 	@FXML
     private ResourceBundle resources;

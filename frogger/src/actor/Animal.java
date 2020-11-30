@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-
 public class Animal extends Actor {
 	Image imgW1, imgW2, imgA1, imgA2, imgS1, imgS2, imgD1, imgD2;
 	int points = 0;

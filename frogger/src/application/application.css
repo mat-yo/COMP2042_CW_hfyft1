@@ -1,7 +1,7 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 .menubackground {
 	-fx-background-image: url('file:resources/background/gamebackground.png');
-	-fx-background-size: stretch;
+	-fx-background-size: cover;
 }
 
 .tutorialbackground {
@@ -9,7 +9,151 @@
 	-fx-background-size: stretch;
 }
 
-/*.quitbackground {
-	-fx-background-image: url('file:resources/background/quitbackground.jpg');
-	-fx-background-size: cover;
-}*/
+.quitbackground {
+	-fx-background-color: #1b2838;
+}
+
+.tuttext {
+	-fx-text-fill: #c7d5e0;
+	-fx-font-size: 16px;
+	-fx-font-family: Arial; 
+}
+
+.tuttexta {
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 16px;
+	-fx-font-family: Arial; 
+}
+
+.tuttextb {
+	-fx-text-fill: #ff0000;
+	-fx-font-size: 16px;
+	-fx-font-family: Arial; 
+}
+
+.tuttextc {
+	-fx-text-fill: #ffff00;
+	-fx-font-size: 16px;
+	-fx-font-family: Arial; 
+}
+
+.tuttextd {
+	-fx-text-fill: #00ffff;
+	-fx-font-size: 16px;
+	-fx-font-family: Arial; 
+}
+
+.menubutton {
+	-fx-border-radius: 8px;
+	-fx-border-width: 3px;
+	-fx-text-fill: #ffff00;
+	-fx-border-color: #ffff00;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.menubutton:hover {
+	-fx-border-radius: 8px;
+	-fx-border-width: 5px;
+	-fx-text-fill: #00ffff;
+	-fx-border-color: #00ffff;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.gamebutton {
+	-fx-border-radius: 8px;
+	-fx-border-width: 3px;
+	-fx-text-fill: #ffff00;
+	-fx-border-color: #ffff00;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.gamebutton:hover {
+	-fx-border-radius: 8px;
+	-fx-border-width: 5px;
+	-fx-text-fill: #ff0000;
+	-fx-border-color: #ff0000;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.tutbutton {
+	-fx-border-radius: 8px;
+	-fx-border-width: 3px;
+	-fx-text-fill: #ffff00;
+	-fx-border-color: #ffff00;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.tutbutton:hover {
+	-fx-border-radius: 8px;
+	-fx-border-width: 5px;
+	-fx-text-fill: #00ff00;
+	-fx-border-color: #00ff00;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.yes {
+	-fx-border-radius: 8px;
+	-fx-border-width: 3px;
+	-fx-text-fill: #ffff00;
+	-fx-border-color: #ffff00;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.yes:hover {
+	-fx-border-radius: 8px;
+	-fx-border-width: 5px;
+	-fx-text-fill: #00ff00;
+	-fx-border-color: #00ff00;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.no {
+	-fx-border-radius: 8px;
+	-fx-border-width: 3px;
+	-fx-text-fill: #ffff00;
+	-fx-border-color: #ffff00;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.no:hover {
+	-fx-border-radius: 8px;
+	-fx-border-width: 5px;
+	-fx-text-fill: #ff0000;
+	-fx-border-color: #ff0000;
+    -fx-background-color: transparent;
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.quittext {
+	-fx-text-fill: #c7d5e0;
+	-fx-font-size: 20px;
+}

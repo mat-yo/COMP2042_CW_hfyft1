@@ -18,7 +18,6 @@ public class confirmControl {
 	
 	@FXML
 	private Pane tutpage;
-	//private Stage lol;
 	
 	@FXML
     private ResourceBundle resources;

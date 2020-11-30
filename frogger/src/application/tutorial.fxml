@@ -1,17 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
 <Pane prefHeight="800.0" prefWidth="600.0" styleClass="tutorialbackground" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.tutorialControl">
    <children>
-      <Button layoutX="240.0" layoutY="591.0" mnemonicParsing="false" onAction="#tut_to_menu" prefHeight="40.0" prefWidth="120.0" text="Back" />
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="101.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+      
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="75.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/misc/wasd.png" />
          </image>
       </ImageView>
+      <Label layoutX="250.0" layoutY="30.0" styleClass="tuttext" text="The WASD keys will control your frog" />
+      <Label layoutX="250.0" layoutY="62.0" styleClass="tuttext" text="W key: move the frog foward" />
+      <Label layoutX="250.0" layoutY="79.0" styleClass="tuttext" text="A key: move the frog left" />
+      <Label layoutX="250.0" layoutY="96.0" styleClass="tuttext" text="S key: move the frog backward" />
+      <Label layoutX="250.0" layoutY="113.0" styleClass="tuttext" text="D key: move the frog right" />
+      
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="88.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/end/End.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="250.0" layoutY="339.0" styleClass="tuttexta" text="Move frog safely to home for 50 points" />
+      
+      <ImageView fitHeight="50.0" fitWidth="100.0" layoutX="420.0" layoutY="385.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../resources/obstacle/truck1Left.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/obstacle/car1Left.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="157.0" layoutY="417.0" styleClass="tuttextb" text="Avoid vehicles to prevent death" />
+      
+      <ImageView fitHeight="25.0" fitWidth="100.0" layoutX="75.0" layoutY="468.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../resources/platform/log3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="100.0" layoutX="76.0" layoutY="498.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../resources/platform/TurtleAnimation1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="250.0" layoutY="498.0" styleClass="tuttextc" text="Cross river using logs or turtles" />
+      
+      <ImageView fitHeight="40.0" fitWidth="100.0" layoutX="425.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/platform/TurtleAnimation2Wet.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="157.0" layoutY="562.0" styleClass="tuttextd" text="Be aware some turtle will sink" />
+      
+      <Button layoutX="240.0" layoutY="700.0" styleClass="tutbutton" mnemonicParsing="false" onAction="#tut_to_menu" prefHeight="40.0" prefWidth="120.0" text="Back" />
+   
    </children>
 </Pane>

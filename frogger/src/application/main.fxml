@@ -7,14 +7,17 @@
 
 <Pane prefHeight="800.0" prefWidth="600.0" styleClass="menubackground" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainControl">
    <children>
-   	<Button layoutX="240.0" layoutY="400.0" mnemonicParsing="false" onAction="#game" prefHeight="40.0" prefWidth="120.0" text="Start Game" />
-      <Button layoutX="240.0" layoutY="500.0" mnemonicParsing="false" onAction="#tutorial" prefHeight="40.0" prefWidth="120.0" text="How To Play" />
-      <Button layoutX="240.0" layoutY="600.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="120.0" text="Exit" />
-      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="100.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+   
+	  <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="100.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/title/gametitle.png" />
          </image>
       </ImageView>
+   
+   	  <Button layoutX="220.0" layoutY="380.0" mnemonicParsing="false" onAction="#game" prefHeight="40.0" prefWidth="160.0" styleClass="menubutton" text="Start Game" />
+      <Button layoutX="220.0" layoutY="470.0" mnemonicParsing="false" onAction="#tutorial" prefHeight="40.0" prefWidth="160.0" styleClass="menubutton" text="How To Play" />
+      <Button layoutX="220.0" layoutY="650.0" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="160.0" styleClass="menubutton" text="Exit" />
+      <Button layoutX="220.0" layoutY="560.0" mnemonicParsing="false" onAction="#score" prefHeight="40.0" prefWidth="160.0" styleClass="menubutton" text="High Scores" />
       
    </children>
 </Pane>

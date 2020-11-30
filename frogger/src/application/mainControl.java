@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.scene.Scene;
 import javafx.scene.Node;
+import javafx.scene.control.*;
 
 import actor.Animal;
 import actor.BackgroundImage;
@@ -28,14 +29,6 @@ import world.MyStage;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-
-
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-
 
 public class mainControl {
 	@FXML
@@ -57,17 +50,14 @@ public class mainControl {
     
     @FXML
     private void game(ActionEvent event) throws IOException {
-    	//Pane game = FXMLLoader.load(getClass().getResource("game.fxml"));
-    	//BackgroundImage gameback = new BackgroundImage("file:resources/background/gamebackground.png");
     	background = new MyStage();
     	
 	    Scene scene  = new Scene(background, 600, 800);
+	    scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	    BackgroundImage froggerback = new BackgroundImage("file:resources/background/gamebackground.png");
 		background.add(froggerback);
 		
-		
 		background.add(new Digit(0, 30, 500, 30));
-		
 		
 		//end
 		background.add(new End(13,90));
@@ -100,7 +90,7 @@ public class mainControl {
 		background.add(new Turtle(35, 345, -0.5, 120, 50));
 		background.add(new WetTurtle(240, 345, -0.5, 120, 50));
 		background.add(new Turtle(445, 345, -0.5, 120, 50));
-		/*
+		
 		//5th row
 		background.add(new Obstacle("file:resources/obstacle/truck1Left.png", 150, 455, -0.5, 200, 40));
 		background.add(new Obstacle("file:resources/obstacle/truck1Left.png", 450, 455, -0.5, 200, 40));
@@ -126,10 +116,24 @@ public class mainControl {
 		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 50, 655, -0.5, 40, 40));
 		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 225, 655, -0.5, 40, 40));
 		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 335, 655, -0.5, 40, 40));
-		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 510, 655, -0.5, 40, 40));*/
+		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 510, 655, -0.5, 40, 40));
 		
 		animal = new Animal("file:resources/frogger/froggerUp.png");
 		background.add(animal);
+		
+		Button backmain = new Button("Quit Game");
+		backmain.setLayoutX(220);
+		backmain.setLayoutY(750);
+		backmain.setPrefHeight(40);
+		backmain.setPrefWidth(160);
+		backmain.getStyleClass().add("gamebutton");
+		background.getChildren().add(backmain);
+		
+		Pane main = FXMLLoader.load(getClass().getResource("main.fxml"));
+		Scene returnmain = new Scene(main);
+		returnmain.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage menupage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		backmain.setOnAction(e -> {menupage.setScene(returnmain);background.stopMusic();});
 		
 		
 		background.start();
@@ -139,27 +143,42 @@ public class mainControl {
 		start();
     }
     
-    
-   /* 
-   public void start() {
-		background.playMusic();
+    @FXML
+    private void tutorial(ActionEvent event) throws IOException {
+    	Pane learn = FXMLLoader.load(getClass().getResource("tutorial.fxml"));
+    	Scene tut = new Scene(learn);
+    	tut.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+    	
+    	Stage tutorialpage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    	tutorialpage.setScene(tut);
+    	tutorialpage.show();
     }
-    */
     
+    @FXML
+    private void score(ActionEvent event) throws IOException {
+    	
+    }
     
+    @FXML
+    private void exit(ActionEvent event) throws IOException {
+    	Pane confirm = FXMLLoader.load(getClass().getResource("confirm.fxml"));
+    	Scene sure = new Scene(confirm);
+    	sure.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+    	Stage confirmpage = new Stage();
+    	confirmpage.initStyle(StageStyle.UNDECORATED);
+    	confirmpage.setScene(sure);
+    	confirmpage.show();
+    }
+    
+    //background process
     public void createTimer() {
-        //AnimationTimer timer = new AnimationTimer() {
     	timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-            	//System.out.printf("%d\n", animal.getPoints());
             	if (animal.changeScore()) {
             		setNumber(animal.getPoints());
-            		//setNumber(5);
-            		System.out.printf("%d\n", animal.getPoints());
             	}
             	if (animal.getStop()) {
-            		System.out.print("STOP\n");
             		background.stopMusic();
             		stop();
             		background.stop();
@@ -190,34 +209,6 @@ public class mainControl {
     		  background.add(new Digit(k, 30, 500 - shift, 30));
     		  shift+=30;
     		}
-    }
-    
-    
-    
-    
-    
-    
-    
-    @FXML
-    private void tutorial(ActionEvent event) throws IOException {
-    	Pane learn = FXMLLoader.load(getClass().getResource("tutorial.fxml"));
-    	Scene tut = new Scene(learn);
-    	tut.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-    	
-    	Stage tutorialpage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-    	tutorialpage.setScene(tut);
-    	tutorialpage.show();
-    }
-    
-    @FXML
-    private void exit(ActionEvent event) throws IOException {
-    	Pane confirm = FXMLLoader.load(getClass().getResource("confirm.fxml"));
-    	Scene sure = new Scene(confirm);
-    	sure.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-    	Stage confirmpage = new Stage();
-    	confirmpage.initStyle(StageStyle.UNDECORATED);
-    	confirmpage.setScene(sure);
-    	confirmpage.show();
     }
 }
 
