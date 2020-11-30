@@ -1,1 +1,15 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.menubackground {
+	-fx-background-image: url('file:resources/background/gamebackground.png');
+	-fx-background-size: stretch;
+}
+
+.tutorialbackground {
+	-fx-background-image: url('file:resources/background/tutorialbackground.png');
+	-fx-background-size: stretch;
+}
+
+/*.quitbackground {
+	-fx-background-image: url('file:resources/background/quitbackground.jpg');
+	-fx-background-size: cover;
+}*/
