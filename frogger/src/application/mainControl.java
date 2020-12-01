@@ -1,12 +1,18 @@
 package application;
 
 import java.net.URL;
-
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import java.util.Collections;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.layout.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 
@@ -15,6 +21,7 @@ import javafx.stage.StageStyle;
 import javafx.scene.Scene;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.Group;
 
 import actor.Animal;
 import actor.BackgroundImage;
@@ -29,6 +36,8 @@ import world.MyStage;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class mainControl {
 	@FXML
@@ -46,7 +55,12 @@ public class mainControl {
     @FXML
     private Animal animal;
     
-    @FXML AnimationTimer timer;
+    @FXML 
+    AnimationTimer timer;
+    saveScore save;
+    Image img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11;
+    ImageView i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11;
+    Label p1, p2, p3, p4, p5, p6, p7, p8, p9, p10;
     
     @FXML
     private void game(ActionEvent event) throws IOException {
@@ -135,7 +149,6 @@ public class mainControl {
 		Stage menupage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 		backmain.setOnAction(e -> {menupage.setScene(returnmain);background.stopMusic();});
 		
-		
 		background.start();
 		Stage primaryStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
@@ -156,7 +169,159 @@ public class mainControl {
     
     @FXML
     private void score(ActionEvent event) throws IOException {
+    	Pane point = new Pane();
+    	point.setPrefHeight(800);
+    	point.setPrefWidth(600);
+    	point.getStyleClass().add("scorebackground");
     	
+    	Label title = new Label("High Score");
+    	title.getStyleClass().add("scoretitle");
+    	title.setLayoutX(235);
+    	title.setLayoutY(95);
+    	
+    	Button returnmain = new Button("Back");
+    	returnmain.setLayoutX(220);
+    	returnmain.setLayoutY(700);
+    	returnmain.setPrefHeight(40);
+    	returnmain.setPrefWidth(160);
+    	returnmain.getStyleClass().add("tutbutton");
+    	
+    	Pane main = FXMLLoader.load(getClass().getResource("main.fxml"));
+		Scene gomain = new Scene(main);
+		gomain.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage menupage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		returnmain.setOnAction(e -> menupage.setScene(gomain));
+    	
+		img1 = new Image("file:resources/number/1.png", 40, 40, true, true);
+		i1 = new ImageView(img1);
+		i1.setLayoutX(150);
+		i1.setLayoutY(135);
+		
+		img2 = new Image("file:resources/number/2.png", 40, 40, true, true);
+		i2 = new ImageView(img2);
+		i2.setLayoutX(150);
+		i2.setLayoutY(180);
+		
+		img3 = new Image("file:resources/number/3.png", 40, 40, true, true);
+		i3 = new ImageView(img3);
+		i3.setLayoutX(150);
+		i3.setLayoutY(225);
+		
+		img4 = new Image("file:resources/number/4.png", 40, 40, true, true);
+		i4 = new ImageView(img4);
+		i4.setLayoutX(150);
+		i4.setLayoutY(270);
+		
+		img5 = new Image("file:resources/number/5.png", 40, 40, true, true);
+		i5 = new ImageView(img5);
+		i5.setLayoutX(150);
+		i5.setLayoutY(315);
+		
+		img6 = new Image("file:resources/number/6.png", 40, 40, true, true);
+		i6 = new ImageView(img6);
+		i6.setLayoutX(150);
+		i6.setLayoutY(360);
+		
+		img7 = new Image("file:resources/number/7.png", 40, 40, true, true);
+		i7 = new ImageView(img7);
+		i7.setLayoutX(150);
+		i7.setLayoutY(405);
+		
+		img8 = new Image("file:resources/number/8.png", 40, 40, true, true);
+		i8 = new ImageView(img8);
+		i8.setLayoutX(150);
+		i8.setLayoutY(450);
+		
+		img9 = new Image("file:resources/number/9.png", 40, 40, true, true);
+		i9 = new ImageView(img9);
+		i9.setLayoutX(150);
+		i9.setLayoutY(495);
+		
+		img10 = new Image("file:resources/number/0.png", 40, 40, true, true);
+		i10 = new ImageView(img10);
+		i10.setLayoutX(150);
+		i10.setLayoutY(540);
+		
+		img11 = new Image("file:resources/number/1.png", 40, 40, true, true);
+		i11 = new ImageView(img11);
+		i11.setLayoutX(110);
+		i11.setLayoutY(540);
+		
+		ArrayList<String> pts = new ArrayList<>();
+		File score = new File("highscores.txt");
+		try {
+			Scanner readscore = new Scanner(score);
+			while(readscore.hasNextLine()) {
+				String data = readscore.nextLine();
+				pts.add(data);
+			}
+			readscore.close();
+		} catch(FileNotFoundException e) {}
+		
+		Collections.sort(pts);
+		Collections.reverse(pts);
+		
+		p1 = new Label(pts.get(0));
+		p1.setLayoutX(420);
+		p1.setLayoutY(135);
+		p1.getStyleClass().add("scoretext");
+		
+		p2 = new Label(pts.get(1));
+		p2.setLayoutX(420);
+		p2.setLayoutY(180);
+		p2.getStyleClass().add("scoretext");
+		
+		p3 = new Label(pts.get(2));
+		p3.setLayoutX(420);
+		p3.setLayoutY(225);
+		p3.getStyleClass().add("scoretext");
+		
+		p4 = new Label(pts.get(3));
+		p4.setLayoutX(420);
+		p4.setLayoutY(270);
+		p4.getStyleClass().add("scoretext");
+		
+		p5 = new Label(pts.get(4));
+		p5.setLayoutX(420);
+		p5.setLayoutY(315);
+		p5.getStyleClass().add("scoretext");
+		
+		p6 = new Label(pts.get(5));
+		p6.setLayoutX(420);
+		p6.setLayoutY(360);
+		p6.getStyleClass().add("scoretext");
+		
+		p7 = new Label(pts.get(6));
+		p7.setLayoutX(420);
+		p7.setLayoutY(405);
+		p7.getStyleClass().add("scoretext");
+		
+		p8 = new Label(pts.get(7));
+		p8.setLayoutX(420);
+		p8.setLayoutY(450);
+		p8.getStyleClass().add("scoretext");
+		
+		p9 = new Label(pts.get(8));
+		p9.setLayoutX(420);
+		p9.setLayoutY(495);
+		p9.getStyleClass().add("scoretext");
+		
+		p10 = new Label(pts.get(9));
+		p10.setLayoutX(420);
+		p10.setLayoutY(540);
+		p10.getStyleClass().add("scoretext");
+		
+    	Group group = new Group();
+    	group.getChildren().addAll(point,title,returnmain);
+    	group.getChildren().addAll(i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11);
+    	group.getChildren().addAll(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
+    	
+    	Scene hs = new Scene(group,600,800);
+    	hs.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+    	
+    	Stage scorepage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		scorepage.setScene(hs);
+		scorepage.show();
     }
     
     @FXML
@@ -165,6 +330,8 @@ public class mainControl {
     	Scene sure = new Scene(confirm);
     	sure.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     	Stage confirmpage = new Stage();
+    	confirmpage.setX(520);
+    	confirmpage.setY(300);
     	confirmpage.initStyle(StageStyle.UNDECORATED);
     	confirmpage.setScene(sure);
     	confirmpage.show();
@@ -172,6 +339,7 @@ public class mainControl {
     
     //background process
     public void createTimer() {
+    	save = new saveScore();
     	timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -179,6 +347,12 @@ public class mainControl {
             		setNumber(animal.getPoints());
             	}
             	if (animal.getStop()) {
+            		try {
+            			saveScore.savefile(animal.getPoints());
+            		} catch (IOException ioe){
+            			
+            		}
+            		//save.savefile(animal.getPoints());
             		background.stopMusic();
             		stop();
             		background.stop();
@@ -211,5 +385,3 @@ public class mainControl {
     		}
     }
 }
-
-

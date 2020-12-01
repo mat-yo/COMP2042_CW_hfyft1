@@ -9,6 +9,11 @@
 	-fx-background-size: stretch;
 }
 
+.scorebackground {
+	-fx-background-image: url('file:resources/background/scorebackground.png');
+	-fx-background-size: stretch;
+}
+
 .quitbackground {
 	-fx-background-color: #1b2838;
 }
@@ -156,4 +161,16 @@
 .quittext {
 	-fx-text-fill: #c7d5e0;
 	-fx-font-size: 20px;
+}
+
+.scoretitle {
+	-fx-text-fill: #c7d5e0;
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+}
+
+.scoretext {
+	-fx-text-fill: #c7d5e0;
+	-fx-font-size: 26px;
+	-fx-font-weight: bold;
 }
