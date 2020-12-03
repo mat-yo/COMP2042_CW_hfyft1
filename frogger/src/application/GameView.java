@@ -29,7 +29,7 @@ public class GameView {
 		background.add(new End(13+(141-13)*2,90));
 		background.add(new End(13+(141-13)*3,90));
 		background.add(new End(13+(141-13)*4,90));
-		/*
+		
 		//10th row
 		background.add(new Log("file:resources/platform/log2.png", 5, 150, 1, 180, 50));
 		background.add(new Log("file:resources/platform/log3.png", 240, 150, 1, 120, 50));
@@ -80,7 +80,7 @@ public class GameView {
 		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 50, 655, -0.5, 40, 40));
 		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 225, 655, -0.5, 40, 40));
 		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 335, 655, -0.5, 40, 40));
-		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 510, 655, -0.5, 40, 40));*/
+		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 510, 655, -0.5, 40, 40));
 	}
 	
 	public void setAnimal(MyStage background, Animal animal) {
