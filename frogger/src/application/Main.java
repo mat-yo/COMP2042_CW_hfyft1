@@ -34,10 +34,9 @@ public class Main extends Application {
 		
 		File score = new File("highscores.txt");
 		
-		
+		//create new text file to save score board if text file not exist
 		if(score.exists()==false) {
 			score.createNewFile();
-			
 			for(i=0;i<10;i++) {
 				FileWriter fw = new FileWriter(score,true);
 				BufferedWriter bw = new BufferedWriter(fw);
@@ -50,13 +49,10 @@ public class Main extends Application {
 		} else {}
 		
 		Pane main = FXMLLoader.load(getClass().getResource("main.fxml"));
-		
-		
 		Scene mainmenu = new Scene(main, 600, 800);
-    	
 		mainmenu.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		
-		//display
+		//display window
 		Image icon = new Image("file:resources/title/frogicon.png");
 		primaryStage.getIcons().add(icon);
 		primaryStage.initStyle(StageStyle.UNDECORATED);

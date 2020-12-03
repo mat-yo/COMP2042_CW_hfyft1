@@ -4,13 +4,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class saveScore {
+public class SaveScore {
 	public static void savefile(int x) throws IOException{
 		int same=0,p;
 		ArrayList<Integer> pts = new ArrayList<>();
 		
-		File score = new File("highscores.txt");		
-		
+		File score = new File("highscores.txt");
 		
 		try {
 			Scanner readscore = new Scanner(score);
@@ -31,9 +30,9 @@ public class saveScore {
 			}
 		}
 		
-		
 		String line = Integer.toString(min);
 		
+		//delete lowest score and add new score if new score > lowest score
 		if(x>min) {
 			File temp = new File("temp.txt");
 			FileWriter fw2 = new FileWriter(temp,true);
@@ -64,6 +63,5 @@ public class saveScore {
 			File newname = new File("highscores.txt");
 			temp.renameTo(newname);
 		}
-	
 	}
 }

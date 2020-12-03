@@ -2,6 +2,7 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
@@ -11,9 +12,8 @@ import javafx.event.ActionEvent;
 
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.Node;
 
-public class tutorialControl {
+public class TutorialControl {
 	@FXML
 	private Pane tutpage;
 	
@@ -26,11 +26,13 @@ public class tutorialControl {
     @FXML
     private void tut_to_menu(ActionEvent event) throws IOException {
     	Pane main = FXMLLoader.load(getClass().getResource("main.fxml"));
-    	Scene menu = new Scene(main);
-    	menu.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
     	
-    	Stage mainpage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-    	mainpage.setScene(menu);
-    	mainpage.show();
+    	TutorialModel tm = new TutorialModel();
+    	TutorialView tv = new TutorialView();
+    	
+    	Scene menu = tm.getBackMainScene(main);
+    	Stage mainpage = tm.getBackMainStage(event);
+    	
+    	tv.setBackMainScene(mainpage, menu);
     }
 }

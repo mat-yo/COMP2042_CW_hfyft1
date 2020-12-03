@@ -13,7 +13,7 @@ import javafx.application.*;
 
 import javafx.scene.control.Button;
 
-public class confirmControl {
+public class ConfirmControl {
 	@FXML Button closeButton;
 	
 	@FXML
