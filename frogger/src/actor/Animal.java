@@ -249,8 +249,5 @@ public class Animal extends Actor {
 			return true;
 		}
 		return false;
-		
 	}
-	
-
 }
