@@ -4,6 +4,10 @@ import javafx.scene.image.Image;
 
 public class Obstacle extends Actor {
 	private double speed;
+	
+	/**
+	 * Move vehicle and loop
+	 */
 	@Override
 	public void act(long now) {
 		move(speed , 0);
@@ -13,6 +17,9 @@ public class Obstacle extends Actor {
 			setX(600);
 	}
 	
+	/**
+	 * Set vehicle start location and speed
+	 */
 	public Obstacle(String imageLink, int xpos, int ypos, double s, int w, int h) {
 		setImage(new Image(imageLink, w,h, true, true));
 		setX(xpos);

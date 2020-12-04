@@ -11,6 +11,10 @@ public class WetTurtle extends Actor{
 	int i = 1;
 	boolean bool = true;
 	boolean sunk = false;
+	
+	/**
+	 * Move wet turtle and loop
+	 */
 	@Override
 	public void act(long now) {
 
@@ -37,6 +41,10 @@ public class WetTurtle extends Actor{
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
+	
+	/**
+	 * Set wet turtle start location and speed
+	 */
 	public WetTurtle(int xpos, int ypos, double s, int w, int h) {
 		turtle1 = new Image("file:resources/platform/TurtleAnimation1.png", w, h, true, true);
 		turtle2 = new Image("file:resources/platform/TurtleAnimation2Wet.png", w, h, true, true);
@@ -47,6 +55,10 @@ public class WetTurtle extends Actor{
 		speed = s;
 		setImage(turtle2);
 	}
+	
+	/**
+	 * Set whether wet turtle is underwater
+	 */
 	public boolean isSunk() {
 		return sunk;
 	}

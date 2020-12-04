@@ -10,6 +10,10 @@ public class Turtle extends Actor{
 	int i = 1;
 	boolean bool = true;
 	@Override
+	
+	/**
+	 * Move turtle and loop
+	 */
 	public void act(long now) {
 
 				if (now/900000000  % 3 ==0) {
@@ -31,6 +35,10 @@ public class Turtle extends Actor{
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
+	
+	/**
+	 * Set turtle start location and speed
+	 */
 	public Turtle(int xpos, int ypos, double s, int w, int h) {
 		turtle1 = new Image("file:resources/platform/TurtleAnimation1.png", w, h, true, true);
 		turtle2 = new Image("file:resources/platform/TurtleAnimation2.png", w, h, true, true);

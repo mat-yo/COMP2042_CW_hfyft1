@@ -11,6 +11,9 @@ public class Digit extends Actor{
 		
 	}
 	
+	/**
+	 * Set number to display score
+	 */
 	public Digit(int n, int dim, int x, int y) {
 		im1 = new Image("file:resources/number/"+n+".png", dim, dim, true, true);
 		setImage(im1);

@@ -4,7 +4,6 @@ import java.io.File;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
 
 import java.util.Random;
 
@@ -19,6 +18,10 @@ public class MyStage extends World{
 		
 	}
 	
+	/**
+	 * Play background music
+	 * 25% chance to get remake version of background music
+	 */
 	public void playMusic() {
 		String musicFile = "resources/soundtrack/Frogger Main Song Theme (loop).mp3"; 
 		String musicFile2 = "resources/soundtrack/Frogger Main Song Theme Remix (loop).mp3";
@@ -36,12 +39,13 @@ public class MyStage extends World{
 			mediaPlayer = new MediaPlayer(sound);
 		}
 		
-		//Media sound = new Media(new File(musicFile).toURI().toString());
-		//mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 	    mediaPlayer.play();
 	}
 	
+	/**
+	 * Stop background music
+	 */
 	public void stopMusic() {
 		mediaPlayer.stop();
 	}

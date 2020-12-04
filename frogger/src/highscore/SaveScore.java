@@ -1,15 +1,18 @@
-package application;
+package highscore;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SaveScore {
+	/**
+	 * Save game if the new score not lower than previous scores
+	 */
 	public static void savefile(int x) throws IOException{
 		int same=0,p;
 		ArrayList<Integer> pts = new ArrayList<>();
 		
-		File score = new File("highscores.txt");
+		File score = new File("src/highscore/highscores.txt");
 		
 		try {
 			Scanner readscore = new Scanner(score);
@@ -34,7 +37,7 @@ public class SaveScore {
 		
 		//delete lowest score and add new score if new score > lowest score
 		if(x>min) {
-			File temp = new File("temp.txt");
+			File temp = new File("src/highscore/temp.txt");
 			FileWriter fw2 = new FileWriter(temp,true);
 			BufferedWriter bw2 = new BufferedWriter(fw2);
 			PrintWriter pw2 = new PrintWriter(bw2);
@@ -60,7 +63,7 @@ public class SaveScore {
 			fw2.close();
 			
 			score.delete();
-			File newname = new File("highscores.txt");
+			File newname = new File("src/highscore/highscores.txt");
 			temp.renameTo(newname);
 		}
 	}

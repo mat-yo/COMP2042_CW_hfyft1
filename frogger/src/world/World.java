@@ -1,6 +1,5 @@
 package world;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,18 +11,13 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-
 
 public abstract class World extends Pane {
     private AnimationTimer timer;
     
     public World() {
-    	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
-
 			@Override
 			public void changed(ObservableValue<? extends Scene> observable, Scene oldValue, Scene newValue) {
 				if (newValue != null) {

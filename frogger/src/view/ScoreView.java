@@ -1,4 +1,4 @@
-package application;
+package view;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -9,20 +9,27 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class ScoreView {
-	
+	/**
+	 * Set pane for scoreboard
+	 */
     public void setPane(Pane point) {
     	point.setPrefHeight(800);
     	point.setPrefWidth(600);
     	point.getStyleClass().add("scorebackground");
     }
     
+    /**
+	 * Set title
+	 */
     public void setLabel(Label title) {
     	title.getStyleClass().add("scoretitle");
     	title.setLayoutX(235);
     	title.setLayoutY(95);
     }
     
-    
+    /**
+	 * Set button
+	 */
     public void setBackButton(Button returnmain) {
     	returnmain.setLayoutX(220);
     	returnmain.setLayoutY(700);
@@ -31,6 +38,9 @@ public class ScoreView {
     	returnmain.getStyleClass().add("tutbutton");
     }
     
+    /**
+	 * Set numbers
+	 */
     public void setI1(ImageView i1) {
 		i1.setLayoutX(150);
 		i1.setLayoutY(135);
@@ -86,6 +96,9 @@ public class ScoreView {
 		i11.setLayoutY(540);
 	}
 	
+	/**
+	 * Set the scores
+	 */
 	public void setP1(Label p1) {
 		p1.setLayoutX(420);
 		p1.setLayoutY(135);
@@ -146,6 +159,9 @@ public class ScoreView {
 		p10.getStyleClass().add("scoretext");
 	}
 	
+	/**
+	 * Set number, title, button and scores into groups
+	 */
 	public void setGroup(Group group, Pane point, Label title, Button returnmain) {
 		group.getChildren().addAll(point,title,returnmain);    	
 	}
@@ -166,11 +182,17 @@ public class ScoreView {
 		group.getChildren().addAll(p6, p7, p8, p9, p10);
 	}
 	
+	/**
+	 * Set scoreboard scene
+	 */
 	public void setScoreScene(Stage scorepage, Scene hs) {
 		scorepage.setScene(hs);
 		scorepage.show();
 	}
 	
+	/**
+	 * Set main menu scene
+	 */
 	public void setBackMainScene(Stage menupage, Scene gomain) {
 		menupage.setScene(gomain);
 	}

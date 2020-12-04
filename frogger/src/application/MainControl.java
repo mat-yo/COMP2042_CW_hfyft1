@@ -1,9 +1,7 @@
 package application;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import javafx.fxml.FXML;
@@ -17,14 +15,18 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 
 import javafx.stage.Stage;
+import view.ExitView;
+import view.GameView;
+import view.ScoreView;
+import view.TutorialView;
 import javafx.scene.Scene;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.Group;
 
 import actor.Animal;
 import actor.BackgroundImage;
 import actor.Digit;
+import highscore.SaveScore;
 import world.MyStage;
 
 import javafx.animation.AnimationTimer;
@@ -32,19 +34,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 
 public class MainControl {
-	@FXML
-	private Pane tutpage;
-	
-	@FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-    
     @FXML
     private MyStage background;
-        
-    @FXML 
     AnimationTimer timer;
     SaveScore save;
     
@@ -56,6 +47,9 @@ public class MainControl {
     private ImageView i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11;
     private Label p1, p2, p3, p4, p5, p6, p7, p8, p9, p10;
     
+    /**
+     * When "start game" button is pressed, load the game page
+     */
     @FXML
     private void game(ActionEvent event) throws IOException {
     	background = new MyStage();  	
@@ -85,7 +79,10 @@ public class MainControl {
 		gv.setGameStage(primaryStage, scene);
 		start();
     }
-
+    
+    /**
+     * When "how to play" button is pressed load tutorial page
+     */
 	@FXML
     private void tutorial(ActionEvent event) throws IOException {
     	Pane learn = FXMLLoader.load(getClass().getResource("tutorial.fxml"));
@@ -99,6 +96,10 @@ public class MainControl {
     	tv.setTutStage(tutorialpage, tut);
     }
     
+	
+	/**
+	 * When "high score" button is pressed load high score page
+	 */
     @FXML
     private void score(ActionEvent event) throws IOException {
     	ScoreModel sm = new ScoreModel();
@@ -138,7 +139,7 @@ public class MainControl {
     	
     	ArrayList<Integer> pts1 = new ArrayList<>();
     	ArrayList<String> pts2 = new ArrayList<>();
-		File score = new File("highscores.txt");
+		File score = new File("src/highscore/highscores.txt");
 		try {
 			Scanner readscore = new Scanner(score);
 			while(readscore.hasNextLine()) {
@@ -194,6 +195,9 @@ public class MainControl {
 		sv.setScoreScene(scorepage, hs);
     }
     
+    /**
+     * When "exit" button is pressed pop up a confirm exit page
+     */
     @FXML
     private void exit(ActionEvent event) throws IOException {
     	Pane confirm = FXMLLoader.load(getClass().getResource("confirm.fxml"));
@@ -201,12 +205,17 @@ public class MainControl {
     	ExitModel em = new ExitModel();
     	ExitView ev = new ExitView();
     	
-    	Scene sure = em.setExitScene(confirm);
-    	Stage confirmpage = em.setExitStage();
+    	Scene sure = em.getExitScene(confirm);
+    	Stage confirmpage = em.getExitStage();
     	ev.setExitStage(confirmpage, sure);
     }
     
     //background process
+    
+    /**
+     * Change points while the game is still running
+     * Stop background music, save score and pop up alert message if game completed
+     */
     public void createTimer() {
     	save = new SaveScore();
     	timer = new AnimationTimer() {
@@ -232,6 +241,9 @@ public class MainControl {
             }
         };
     }
+    /**
+     * start background music
+     */
 	public void start() {
 		background.playMusic();
     	createTimer();
@@ -241,6 +253,9 @@ public class MainControl {
        timer.stop();
     }
     
+    /**
+     * Set the digit for highscore display
+     */
     public void setNumber(int n) {
     	int shift = 0;
     	while (n > 0) {

@@ -18,22 +18,33 @@ public class ScoreModel {
     ImageView i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11;
     Label p1, p2, p3, p4, p5, p6, p7, p8, p9, p10;
 	
-	
+    /**
+	 * Create new pane for scoreboard
+	 */
 	public Pane getPane() {
 		Pane point = new Pane();
 		return point;
 	}
 	
+	/**
+	 * Create title
+	 */
 	public Label getLabel() {
 		Label title = new Label("High Score");
 		return title;
 	}
 	
+	/**
+	 * Create retun to menu button
+	 */
 	public Button getBackButton() {
 		Button returnmain = new Button("Back");
 		return returnmain;
 	}
 	
+	/**
+	 * Create images to display digit
+	 */
 	public ImageView getI1() {
 		img1 = new Image("file:resources/number/1.png", 40, 40, true, true);
 		i1 = new ImageView(img1);
@@ -100,6 +111,9 @@ public class ScoreModel {
 		return i11;
 	}
 	
+	/**
+	 * Create labels to display scores
+	 */
 	public Label getP1(ArrayList pts) {
 		p1 = new Label((String) pts.get(0));
 		return p1;
@@ -150,28 +164,43 @@ public class ScoreModel {
 		return p10;
 	}
 	
+	/**
+	 * Create a group to combine the objects
+	 */
 	public Group getGroup() {
 		Group group = new Group();
 		return group;
 	}
 	
+	/**
+	 * Create new scene for scoreboard
+	 */
 	public Scene getScoreScene(Group group) {
 		Scene hs = new Scene(group,600,800);
 		hs.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		return hs;
 	}
 	
+	/**
+	 * Create stage for scoreboard
+	 */
 	public Stage getScoreStage(ActionEvent event) {
 		Stage scorepage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 		return scorepage;
 	}
 	
+	/**
+	 * Create new scene main menu
+	 */
 	public Scene getBackMainScene(Pane main) {
 		Scene gomain = new Scene(main);
 		gomain.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		return gomain;
 	}
 	
+	/**
+	 * Create stage for main menu
+	 */
 	public Stage getbackMainStage(ActionEvent event) {
 		Stage menupage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 		return menupage;

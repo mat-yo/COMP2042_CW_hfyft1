@@ -10,6 +10,9 @@ public class BackgroundImage extends Actor{
 		
 	}
 	
+	/**
+	 * Set background image size
+	 */
 	public BackgroundImage(String imageLink) {
 		setImage(new Image(imageLink, 600, 800, true, true));
 	}

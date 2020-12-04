@@ -1,4 +1,4 @@
-package application;
+package view;
 
 import actor.Animal;
 import actor.BackgroundImage;
@@ -15,12 +15,17 @@ import world.MyStage;
 
 
 public class GameView {
+	/**
+	 * Set game background
+	 */
 	public void setGameBack(MyStage background,BackgroundImage froggerback) {
 		background.add(froggerback);
 	}
 	
+	/**
+	 * Set game scene
+	 */
 	public void setGameScene(MyStage background) {
-		
 		background.add(new Digit(0, 30, 500, 30));
 		
 		//end
@@ -83,11 +88,16 @@ public class GameView {
 		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 510, 655, -0.5, 40, 40));
 	}
 	
+	/**
+	 * Set the frog
+	 */
 	public void setAnimal(MyStage background, Animal animal) {
 		background.add(animal);
 	}
 	
-	
+	/**
+	 * Set "exit game" button
+	 */
 	public void setBackButton(MyStage background, Button backmain) {
 		backmain.setLayoutX(220);
 		backmain.setLayoutY(750);
@@ -97,11 +107,17 @@ public class GameView {
 		background.getChildren().add(backmain);
 	}
 	
+	/**
+	 * Set game stage
+	 */
 	public void setGameStage(Stage primaryStage, Scene scene) {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
 	
+	/**
+	 * Set return to menu scene
+	 */
 	public void setBackMenuScene(Scene returnmain, Stage menupage) {
 		menupage.setScene(returnmain);
 	}

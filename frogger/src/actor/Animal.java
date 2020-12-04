@@ -24,6 +24,10 @@ public class Animal extends Actor {
 	int carD = 0;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
+	
+	/**
+	 * Set frog actions when WASD keys are pressed
+	 */
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
@@ -123,6 +127,10 @@ public class Animal extends Actor {
 		});
 	}
 	
+	/**
+	 * Move the frog
+	 * If crash by car or drop in water then frog die, respawn frog at respawn location
+	 */
 	@Override
 	public void act(long now) {
 		int bounds = 0;
@@ -235,14 +243,21 @@ public class Animal extends Actor {
 			waterDeath = true;
 		}
 	}
+	
 	public boolean getStop() {
 		return end==5;
 	}
 	
+	/**
+	 * Pass current score
+	 */
 	public int getPoints() {
 		return points;
 	}
 	
+	/**
+	 * Change the score
+	 */
 	public boolean changeScore() {
 		if (changeScore) {
 			changeScore = false;
