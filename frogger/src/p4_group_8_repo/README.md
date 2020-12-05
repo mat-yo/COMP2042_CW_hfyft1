@@ -1,6 +1,6 @@
 # About Frogger
 Frogger is a remake and improved version of Frogger 1981 arcade game
-<img src="https://github.com/mat-yo/frogger/blob/master/frogger/resources/misc/game.png">
+<img src="https://github.com/mat-yo/frogger/blob/master/frogger/resources/misc/game.png" height="600px" width="450px">
 
 # Main Changes
 - Added main menu
