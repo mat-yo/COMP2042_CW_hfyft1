@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"actor"},{"l":"All Packages","url":"allpackages-index.html"},{"l":"application"},{"l":"highscore"},{"l":"view"},{"l":"world"}]
+packageSearchIndex = [{"l":"actor"},{"l":"All Packages","url":"allpackages-index.html"},{"l":"application"},{"l":"exit"},{"l":"game"},{"l":"highscore"},{"l":"scoreboard"},{"l":"tutorial"},{"l":"world"}]

@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import view.MenuView;
 import javafx.scene.layout.*;
 import javafx.fxml.*;
 import javafx.scene.image.*;

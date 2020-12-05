@@ -15,10 +15,10 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 
 import javafx.stage.Stage;
-import view.ExitView;
-import view.GameView;
-import view.ScoreView;
-import view.TutorialView;
+import scoreboard.ScoreModel;
+import scoreboard.ScoreView;
+import tutorial.TutorialModel;
+import tutorial.TutorialView;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.Group;
@@ -26,6 +26,10 @@ import javafx.scene.Group;
 import actor.Animal;
 import actor.BackgroundImage;
 import actor.Digit;
+import exit.ExitModel;
+import exit.ExitView;
+import game.GameModel;
+import game.GameView;
 import highscore.SaveScore;
 import world.MyStage;
 
