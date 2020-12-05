@@ -19,7 +19,7 @@ public class Main extends Application {
 	
 	/**
 	 * Display stage for scene when start the application
-	 * Create highscore file if the file do not exist
+	 * Create high score file if the file do not exist
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
