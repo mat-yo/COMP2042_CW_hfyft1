@@ -25,9 +25,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		int i;
 		
-		File score = new File("src/highscore/highscores.txt");
-		  
 		//Create new text file to save score board if text file not exist
+		File score = new File("src/highscore/highscores.txt");
 		if(score.exists()==false) {
 			score.createNewFile();
 			for(i=0;i<10;i++) {

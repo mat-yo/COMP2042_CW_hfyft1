@@ -9,8 +9,8 @@ public class Turtle extends Actor{
 	private double speed;
 	int i = 1;
 	boolean bool = true;
-	@Override
 	
+	@Override
 	/**
 	 * Move turtle and loop
 	 */
@@ -18,15 +18,12 @@ public class Turtle extends Actor{
 
 				if (now/900000000  % 3 ==0) {
 					setImage(turtle2);
-					
 				}
 				else if (now/900000000 % 3 == 1) {
 					setImage(turtle1);
-					
 				}
 				else if (now/900000000 %3 == 2) {
 					setImage(turtle3);
-					
 				}
 			
 		move(speed , 0);

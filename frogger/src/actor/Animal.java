@@ -43,7 +43,6 @@ public class Animal extends Actor {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event){
 				if (noMove) {
-					
 				}
 				else {
 				if (second) {

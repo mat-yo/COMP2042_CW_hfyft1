@@ -29,7 +29,7 @@ public class Log extends Actor {
 	}
 	
 	/**
-	 * Set log directions
+	 * Set log moving direction
 	 */
 	public boolean getLeft() {
 		return speed < 0;

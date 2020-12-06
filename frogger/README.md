@@ -18,7 +18,7 @@ Frogger is a remake game based on Frogger 1981 arcade game and coded with Java
 - Code improvements for future maintenance
 
 ### Code Improvements
-- Splitted images and java files to different folders
+- Split images and java files to different folders
 - Organized files into packages
 - Organized code to adhere MVC pattern to enhance maintainability
 

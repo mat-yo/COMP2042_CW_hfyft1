@@ -15,7 +15,7 @@ public class MenuModel {
 	}
 	
 	/*
-	 * Get mainmenu background
+	 * Get main menu background
 	 */
 	public Image getMenuBack() {
 		Image icon = new Image("file:resources/title/frogicon.png");

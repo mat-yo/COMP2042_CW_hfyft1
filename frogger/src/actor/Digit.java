@@ -8,7 +8,6 @@ public class Digit extends Actor{
 	@Override
 	public void act(long now) {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	/**
@@ -20,5 +19,4 @@ public class Digit extends Actor{
 		setX(x);
 		setY(y);
 	}
-	
 }

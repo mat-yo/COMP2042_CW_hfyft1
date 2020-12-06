@@ -113,6 +113,7 @@ public class MainControl {
     	Label title = sm.getLabel();
     	Button returnmain = sm.getBackButton();
     	Group group = sm.getGroup();
+    	
     	i1 = sm.getI1();
     	i2 = sm.getI2();
     	i3 = sm.getI3();
@@ -258,7 +259,7 @@ public class MainControl {
     }
     
     /**
-     * Set the digit for highscore display
+     * Set the digit for high score display
      */
     public void setNumber(int n) {
     	int shift = 0;
