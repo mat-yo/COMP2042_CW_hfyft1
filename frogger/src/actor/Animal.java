@@ -211,6 +211,8 @@ public class Animal extends Actor {
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
 			if(getIntersectingObjects(Log.class).get(0).getRight())
 				move(1,0);
+			else if (getIntersectingObjects(Log.class).get(0).getLeft())
+				move(-1,0);
 			else
 				move (.75,0);
 		}

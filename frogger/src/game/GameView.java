@@ -47,8 +47,8 @@ public class GameView {
 		background.add(new Turtle(475, 200, -0.5, 120, 50));
 		
 		//8th row
-		background.add(new Log("file:resources/platform/logs.png", 5, 250, 1, 280, 50));
-		background.add(new Log("file:resources/platform/logs.png", 315, 250, 1, 280, 50));
+		background.add(new Log("file:resources/platform/logs.png", 5, 250, -1, 260, 50));
+		background.add(new Log("file:resources/platform/logs.png", 315, 250, -1, 260, 50));
 		
 		//7th row
 		background.add(new Log("file:resources/platform/log3.png", 25, 300, 1, 120, 50));
@@ -70,10 +70,10 @@ public class GameView {
 		background.add(new Obstacle("file:resources/obstacle/car1Right.png", 500, 505, 1.5, 40, 40));
 		
 		//3rd row
-		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 50, 555, -0.5, 40, 40));
-		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 225, 555, -0.5, 40, 40));
-		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 335, 555, -0.5, 40, 40));
-		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 510, 555, -0.5, 40, 40));
+		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 50, 555, -0.7, 40, 40));
+		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 225, 555, -0.7, 40, 40));
+		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 335, 555, -0.7, 40, 40));
+		background.add(new Obstacle("file:resources/obstacle/car1Left.png", 510, 555, -0.7, 40, 40));
 		
 		
 		//2nd row
