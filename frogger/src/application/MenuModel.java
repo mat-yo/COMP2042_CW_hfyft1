@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 
 public class MenuModel {
-	/**
+	/*
 	 * Create new scene to display main menu
 	 */
 	public Scene getMenuScene(Pane main) {
@@ -14,7 +14,7 @@ public class MenuModel {
 		return mainmenu;
 	}
 	
-	/**
+	/*
 	 * Get main menu background
 	 */
 	public Image getMenuBack() {

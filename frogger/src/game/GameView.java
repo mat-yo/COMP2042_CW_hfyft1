@@ -47,8 +47,8 @@ public class GameView {
 		background.add(new Turtle(475, 200, -0.5, 120, 50));
 		
 		//8th row
-		background.add(new Log("file:resources/platform/logs.png", 5, 250, -1, 260, 50));
-		background.add(new Log("file:resources/platform/logs.png", 315, 250, -1, 260, 50));
+		background.add(new Log("file:resources/platform/logs.png", 5, 250, -1, 250, 50));
+		background.add(new Log("file:resources/platform/logs.png", 345, 250, -1, 250, 50));
 		
 		//7th row
 		background.add(new Log("file:resources/platform/log3.png", 25, 300, 1, 120, 50));
